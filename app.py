@@ -54,21 +54,6 @@ def main_logic():
     flask.session['access_token'] = token_response['accessToken']
     return flask.redirect('/graphcall')
 
-'''
-@app.route('/graphcall')
-def graphcall():
-    if 'access_token' not in flask.session:
-        return flask.redirect(flask.url_for('login'))
-    endpoint = config.RESOURCE + '/' + config.API_VERSION + '/me/'
-    http_headers = {'Authorization': 'Bearer ' + flask.session.get('access_token'),
-                    'User-Agent': 'adal-python-sample',
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'client-request-id': str(uuid.uuid4())}
-    graph_data = requests.get(endpoint, headers=http_headers, stream=False).json()
-    return flask.render_template('display_graph_info.html', graph_data=graph_data)
-'''
-
 @app.route('/graphcall')
 def graphcall():
     if 'access_token' not in flask.session:
