@@ -1,3 +1,14 @@
+# test / miscellaneous files
+wip-*.py
+.DS_Store
+
+# auth related files
+auth/
+config.*.py
+
+# VSCode debugging files
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -7,8 +18,10 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+bin/
 .Python
 env/
+envcd/
 build/
 develop-eggs/
 dist/
@@ -86,6 +99,7 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
+pyvenv.cfg
 
 # Spyder project settings
 .spyderproject
@@ -99,3 +113,4 @@ ENV/
 
 # mypy
 .mypy_cache/
+config.py

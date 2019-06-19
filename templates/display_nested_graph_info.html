@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privileged Role Members</title>
+</head>
+<body>
+<p1><b>Role Data:</b> </p1>
+<table>
+{% for key, value in graph_data_priv_roles.items() %}
+   <tr>
+        <th> {{ key }} </th>
+        <td> {{ value }} </td>
+   </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
