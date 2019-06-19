@@ -116,14 +116,6 @@ def graphcall():
     return jsonify(graph_data_priv_roles)
 
     #return flask.render_template('display_nested_graph_info.html', graph_data_priv_roles=graph_data_priv_roles)
-    #return jsonify(graph_data_priv_roles)
-
-
-    #endpoint = config.RESOURCE + '/' + config.API_VERSION + '/me/'
-    #graph_data = requests.get(endpoint, headers=http_headers, stream=False).json()
-    #return graph_data
-    #return flask.render_template('display_graph_info.html', graph_data=graph_data)
-
 
 def get_aad_user(userId, http_headers):
     if 'access_token' not in flask.session:
@@ -134,26 +126,6 @@ def get_aad_user(userId, http_headers):
     graph_data_aad_user = requests.get(endpoint_aad_user, headers=http_headers, stream=False).json()
 
     return graph_data_aad_user
-
-
-'''
-@app.route('/graphcall')
-def graphcall():
-    if 'access_token' not in flask.session:
-        return flask.redirect(flask.url_for('login'))
-    #endpoint = config.RESOURCE + '/' + 'beta' + '/privilegedRoles/'
-    endpoint = config.RESOURCE + '/' + config.API_VERSION + '/me/'
-    http_headers = {'Authorization': 'Bearer ' + flask.session.get('access_token'),
-                    'User-Agent': 'adal-python-sample',
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'client-request-id': str(uuid.uuid4())}
-    graph_data = requests.get(endpoint, headers=http_headers, stream=False).json()
-    print (graph_data)
-    #return flask.render_template('display_graph_info.html', graph_data=graph_data)
-'''
-
-#def ()
 
 if __name__ == "__main__":
     app.run()
